@@ -1,0 +1,22 @@
+<h1>Event List</h1>
+
+<table>
+  <tr>
+    <th>Event Type</th>
+    <th>Event Name</th>
+    <th>Event Date</th>
+    <th>Event Creator</th>
+    
+  </tr>
+
+  @for(a of AllEvents; track $index){
+  <tr>
+    <td>{{a.type}}</td>
+    <td>{{a.eventname }}</td>
+    <td>{{a.eventDate}}</td>
+    <td>{{a.username}}</td>
+    
+
+  </tr>
+  }
+</table>
