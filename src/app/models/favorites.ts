@@ -1,9 +1,11 @@
+import { EventModel } from "./events";
+
 export interface FavoriteModel {
     id:              number;
     currentusername: string;
-    currentuserid:   number;
+    currentuserid:   string;
     eventid:         number;
-    event:           Event;
+    event:           EventModel;
 }
 
 export interface Event {
@@ -14,6 +16,6 @@ export interface Event {
     eventTime:   string;
     type:        string;
     username:    string;
-    userid:      number;
+    userid:      string;
     timestamp:   Date;
 }

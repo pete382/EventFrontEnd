@@ -1,10 +1,11 @@
 import { GoogleSigninButtonModule, SocialAuthService, SocialUser } from '@abacritt/angularx-social-login';
 import { Component } from '@angular/core';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [GoogleSigninButtonModule],
+  imports: [GoogleSigninButtonModule, RouterOutlet, RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -22,6 +23,7 @@ export class LoginComponent {
       console.log(this.user);
     });
   }
+
 
   signOut(): void {
     this.socialAuthServiceConfig.signOut();

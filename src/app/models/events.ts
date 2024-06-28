@@ -6,7 +6,7 @@ export interface EventModel {
     eventTime:   string;
     type:        string;
     username:    string;
-    userid:      number;
+    userid:      string;
     timestamp:   Date;
 }
 

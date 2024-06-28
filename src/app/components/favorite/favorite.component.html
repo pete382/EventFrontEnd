@@ -1,0 +1,8 @@
+@for (f of allFavorites; track $index) {
+    <p>{{f.event.type}}</p>
+    <p>{{f.event.eventname}}</p>
+    <p>{{f.event.eventDate}}</p>
+    <p>{{f.event.username}}</p>
+    <button (click)="deleteFavorite(f, user.id)">Remove</button>
+
+}

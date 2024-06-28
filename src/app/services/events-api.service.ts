@@ -17,10 +17,15 @@ export class EventsApiService {
 allEvents:Event[] = [];
 
 url:string = "https://localhost:7277"
+
   
 getAllEvents():Observable<EventModel[]>{
   return this.http.get<EventModel[]>(`${this.url}/api/Event`);
 } 
+
+getById(id:number):Observable<EventModel>{
+  return this.http.get<EventModel>(`${this.url}/api/Event/${id}`)
+}
 
 
 AddEvent(newEvent:EventModel):Observable<EventModel>{

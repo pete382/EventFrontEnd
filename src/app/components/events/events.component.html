@@ -12,9 +12,10 @@
   @for(a of AllEvents; track $index){
   <tr>
     <td>{{a.type}}</td>
-    <td>{{a.eventname }}</td>
+    <td><a routerLink="/{{a.id}}">{{a.eventname }}</a></td>
     <td>{{a.eventDate}}</td>
     <td>{{a.username}}</td>
+    <td><button (click)="addNewFavorite(a, user.id)" >Favorite</button></td>
     <td><button (click)="DeleteEvent(a)" >Delete</button></td>
   </tr>
   }
