@@ -19,8 +19,6 @@ allEvents:Event[] = [];
 url:string = "https://localhost:7277"
   
 getAllEvents():Observable<EventModel[]>{
- 
-
   return this.http.get<EventModel[]>(`${this.url}/api/Event`);
 } 
 

@@ -6,7 +6,7 @@
     <th>Event Name</th>
     <th>Event Date</th>
     <th>Event Creator</th>
-    
+    <th></th>
   </tr>
 
   @for(a of AllEvents; track $index){
@@ -15,8 +15,9 @@
     <td>{{a.eventname }}</td>
     <td>{{a.eventDate}}</td>
     <td>{{a.username}}</td>
-    
-
+    <td><button (click)="DeleteEvent(a)" >Delete</button></td>
   </tr>
   }
 </table>
+
+<app-event-form (Submitted)="addEvent($event)" ></app-event-form>
