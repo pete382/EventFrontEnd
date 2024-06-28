@@ -19,7 +19,7 @@ export const appConfig: ApplicationConfig = {
             provider: new GoogleLoginProvider(
               //Remove the .apps.googleusercontent.com from the client id
               //MAKE SURE TO HIDE IT FROM GITHUB
-              "584052596955-h8jd9hrrmpi0jj94fnhcumcg4pma2758"
+              ""
             ),
           },
         ],
