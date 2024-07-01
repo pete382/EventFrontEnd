@@ -1,11 +1,14 @@
-<h3 style="color:rgb(54, 135, 102); font-family:Franklin Gothic Medium;">Add New Event</h3>
+<div class="container" class="border">
 
-<input type="text" [(ngModel)]="formEvent.eventname" placeholder="Add Event Name"> <br>
-<input type="text" [(ngModel)]="formEvent.description" placeholder="Add Event Description"><br>
-<input type="date" [(ngModel)]="formEvent.eventDate" placeholder="Add Event creation Date"><br>
-<input type="time" [(ngModel)]="formEvent.eventTime" placeholder="Add Event Time"><br>
-<input type="text" [(ngModel)]="formEvent.type" placeholder="Add Event Type"><br>
-<div>
-    <br>
-<button (click)="emitSubmitted()" style="background-color: gold;" >Submit</button>
+    <h3 style="color:rgb(54, 135, 102); font-family:Franklin Gothic Medium;">Add New Event</h3>
+
+    <input type="text" [(ngModel)]="formEvent.eventname" placeholder="Add Event Name"> <br>
+    <input type="text" [(ngModel)]="formEvent.description" placeholder="Add Event Description"><br>
+    <input type="date" [(ngModel)]="formEvent.eventDate" placeholder="Add Event creation Date"><br>
+    <input type="time" [(ngModel)]="formEvent.eventTime" placeholder="Add Event Time"><br>
+    <input type="text" [(ngModel)]="formEvent.type" placeholder="Add Event Type"><br>
+    <div>
+        <br>
+    <button (click)="emitSubmitted()" style="background-color: gold;" >Submit</button>
+    </div>
 </div>
