@@ -20,9 +20,11 @@ export class EventsComponent {
 constructor(private _EventService:EventsApiService, private _favoriteService:FavoriteService, private socialAuthServiceConfig: SocialAuthService){}
 user:SocialUser = {} as SocialUser;
 loggedIn: boolean = false;
-
+event_title: string = "";
 AllEvents: EventModel[] = [];
 allFavorites:FavoriteModel[] = [];
+event_type:string = "";
+
 
 ngOnInit() {
   //authState is a custom observable that will run again any time changes are noticed.
@@ -33,13 +35,30 @@ ngOnInit() {
     console.log(this.user);
     this.getAll();
   });
+  
 }
 
-
 getAll(){
+  if(this.event_type!="" && this.event_title!=""){
+    this._EventService.getAllEvents(this.event_type,this.event_title).subscribe((response:EventModel[])=>{
+      this.AllEvents = response;
+    })
+  }
+  else if(this.event_type!=""){
+    this._EventService.getAllEvents(this.event_type).subscribe((response:EventModel[])=>{
+      this.AllEvents = response;
+    })
+  }
+  else if(this.event_title!=""){
+    this._EventService.getAllEvents(undefined,this.event_title).subscribe((response:EventModel[])=>{
+      this.AllEvents = response;
+    })
+  }
+  else{
   this._EventService.getAllEvents().subscribe((response:EventModel[]) => 
     {console.log(response);
     this.AllEvents = response;})
+  }
 }
 
 

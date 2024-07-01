@@ -19,8 +19,18 @@ allEvents:Event[] = [];
 url:string = "https://localhost:7277"
 
   
-getAllEvents():Observable<EventModel[]>{
-  return this.http.get<EventModel[]>(`${this.url}/api/Event`);
+getAllEvents(type?:string,event_name?:string):Observable<EventModel[]>{
+  if(type!=undefined && event_name!=undefined){
+    return this.http.get<EventModel[]>(`${this.url}/api/Event?type=${type}&eventname=${event_name}`);
+  }
+  else if(type!=undefined){
+    return this.http.get<EventModel[]>(`${this.url}/api/Event?type=${type}`);
+  }
+  else if(event_name!=undefined){
+    return this.http.get<EventModel[]>(`${this.url}/api/Event?eventname=${event_name}`);
+  }
+  else
+    return this.http.get<EventModel[]>(`${this.url}/api/Event`);
 } 
 
 getById(id:number):Observable<EventModel>{

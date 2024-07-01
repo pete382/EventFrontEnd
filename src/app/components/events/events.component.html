@@ -1,7 +1,12 @@
 <div >
-
 <h2 style = "color: darkblue; font-family:Franklin Gothic Medium;">Event List</h2>
 
+<h4>Filter:</h4>
+<input type="text" [(ngModel)]="event_type" placeholder="Enter Event Type:" /> <br>
+<input type="text" [(ngModel)]="event_title" placeholder="Enter Event Name:" /> <br>
+<button (click)="getAll()" >Search By Title</button>
+<br>
+<br>
 <table>
   <tr >
     <th style="padding-left:20px; padding-right:10px; text-align:left;font-family:Franklin Gothic Medium;" >Event Type</th>
