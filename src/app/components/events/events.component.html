@@ -1,24 +1,36 @@
-<h1>Event List</h1>
+<div >
+
+<h2 style = "color: darkblue; font-family:Franklin Gothic Medium;">Event List</h2>
 
 <table>
-  <tr>
-    <th>Event Type</th>
-    <th>Event Name</th>
-    <th>Event Date</th>
-    <th>Event Creator</th>
+  <tr >
+    <th style="padding-left:20px; padding-right:10px; text-align:left;font-family:Franklin Gothic Medium;" >Event Type</th>
+    <th style="padding-left:20px; padding-right:10px; text-align:center;font-family:Franklin Gothic Medium;" >Event Name</th>
+    <th hidden>Event Date</th>
+    <th hidden>Event Creator</th>
     <th></th>
   </tr>
 
   @for(a of AllEvents; track $index){
-  <tr>
-    <td>{{a.type}}</td>
-    <td><a routerLink="/{{a.id}}">{{a.eventname }}</a></td>
-    <td>{{a.eventDate}}</td>
-    <td>{{a.username}}</td>
-    <td><button (click)="addNewFavorite(a, user.id)" >Favorite</button></td>
-    <td><button (click)="DeleteEvent(a)" >Delete</button></td>
+  <tr > 
+    <td style="padding-left:20px; padding-right:10px; text-align:left;" > &#x2022; {{a.type}}</td>
+    <td style="padding-left:20px; padding-right:10px; text-align:center;" ><a routerLink="/{{a.id}}">{{a.eventname }}</a></td>
+    <td hidden>{{a.eventDate}}</td>
+    <td hidden>{{a.username}}</td>
+    
+    <td  ><button style = "color:rgb(54, 135, 102); background-color:aliceblue;" (click)="addNewFavorite(a, user.id)" >Favorite</button></td>
+    
+    <td><button (click)="DeleteEvent(a)"  style = "margin-left: 10%; color:red;background-color:aliceblue;">Delete</button></td>
+  
+  
   </tr>
   }
 </table>
+</div>
+<br>
 
-<app-event-form (Submitted)="addEvent($event)" ></app-event-form>
+
+<div>
+  <br>
+<app-event-form (Submitted)="addEvent($event)"></app-event-form>
+</div>

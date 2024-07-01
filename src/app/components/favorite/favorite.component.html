@@ -1,8 +1,28 @@
-@for (f of allFavorites; track $index) {
-    <p>{{f.event.type}}</p>
-    <p>{{f.event.eventname}}</p>
-    <p>{{f.event.eventDate}}</p>
-    <p>{{f.event.username}}</p>
-    <button (click)="deleteFavorite(f, user.id)">Remove</button>
 
-}
+<h3>My Favorites!</h3>
+
+
+<table>
+    <tr>
+
+        <th style="padding-left:20px; padding-right:10px; text-align:left"> Type </th>
+        <th style="padding-left:20px; padding-right:10px; text-align:center" > Event Name </th>
+        <th style="padding-left:20px; padding-right:10px; text-align:center" > Scheduled Date</th>
+        <th style="padding-left:20px; padding-right:10px; text-align:center" > Event Creator </th>
+
+    </tr>
+
+    @for (f of allFavorites; track $index) {
+
+
+
+    <tr>
+        <td style="padding-left:20px; padding-right:10px; text-align:left"> &#x2022;  {{f.event.type}}</td>
+        <td style="padding-left:20px; padding-right:10px; text-align:center" >{{f.event.eventname}}</td>
+        <td style="padding-left:20px; padding-right:10px; text-align:center" >{{f.event.eventDate}}</td>
+        <td style="padding-left:20px; padding-right:10px; text-align:center" >{{f.event.username}}</td>
+        <button (click)="deleteFavorite(f, user.id)" style="color:red; background-color: aliceblue;">Remove</button>
+    </tr>
+
+    }
+</table>
