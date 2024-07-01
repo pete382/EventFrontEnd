@@ -4,25 +4,26 @@ import { FavoriteModel } from '../models/favorites';
 import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class FavoriteService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http:HttpClient) { }
+  allFavorites: FavoriteModel[] = [];
+  url: string = 'https://localhost:7277';
 
-  allFavorites:FavoriteModel[] = [];
-  url:string = "https://localhost:7277"
-
-  getAll(id:string):Observable<FavoriteModel[]>{
-    return this.http.get<FavoriteModel[]>(`${this.url}/api/Favorite/${id}`)
+  getAll(id: string): Observable<FavoriteModel[]> {
+    return this.http.get<FavoriteModel[]>(`${this.url}/api/Favorite/${id}`);
   }
 
-  addFavorite(newFavorite:FavoriteModel):Observable<FavoriteModel>{
-    return this.http.post<FavoriteModel>(`${this.url}/api/Favorite`, newFavorite)
+  addFavorite(newFavorite: FavoriteModel): Observable<FavoriteModel> {
+    return this.http.post<FavoriteModel>(
+      `${this.url}/api/Favorite`,
+      newFavorite
+    );
   }
 
-  deleteFavorite(id:number):Observable<void>{
-    return this.http.delete<void>(`${this.url}/api/Favorite/${id}`)
+  deleteFavorite(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.url}/api/Favorite/${id}`);
   }
-
 }

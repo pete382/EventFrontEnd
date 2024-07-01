@@ -1,7 +1,11 @@
-<h1>{{this.displayEvent.eventname}}</h1>
-<p>{{this.displayEvent.description}}</p>
-<p>{{this.displayEvent.eventDate}}</p>
-<p>{{this.displayEvent.eventTime}}</p>
-<p>{{this.displayEvent.type}}</p>
-<p>{{this.displayEvent.username}}</p>
-
+<div>
+  <h2>Event Details</h2>
+</div>
+<div class="container border border-3 text-center">
+  <h4>Event Name: {{ this.displayEvent.eventname }}</h4>
+  <p>Description: {{ this.displayEvent.description }}</p>
+  <p>Event Date: {{ this.displayEvent.eventDate }}</p>
+  <p>Event Time: {{ this.displayEvent.eventTime }}</p>
+  <p>Event Type: {{ this.displayEvent.type }}</p>
+  <p>Host Name: {{ this.displayEvent.username }}</p>
+</div>

@@ -1,16 +1,21 @@
 @if (!loggedIn) {
-    <!-- Custom component that handles log in -->
-    <asl-google-signin-button></asl-google-signin-button>
+<!-- Custom component that handles log in -->
+<asl-google-signin-button></asl-google-signin-button>
+} @else {
+<!-- calls our log out method -->
+
+<div class="container m-3">
+  <button class="btn btn-outline-dark" (click)="signOut()">Sign Out</button>
+  <br />
+  <br />
+  
+  <h3>
+    <button routerLink="/" type="button" class="btn btn-secondary">Home</button>
+  </h3>
+  <h3>
+    <button routerLink="favorite" class="btn btn-primary">Favorites</button>
+  </h3>
+  <router-outlet></router-outlet>
+</div>
+
 }
-  @else {
-    <!-- calls our log out method -->
-    <div class="container m-3">
-      <button class="btn btn-outline-dark" (click)="signOut()">
-        Sign Out
-      </button>
-      <h3><button routerLink="/" type="button" class="btn btn-secondary">Home</button></h3>
-      <h3><button routerLink="favorite" class="btn btn-primary">Favorites</button></h3>
-      <router-outlet></router-outlet>
-    </div>
-    
-  }

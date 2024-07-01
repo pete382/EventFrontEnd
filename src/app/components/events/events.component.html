@@ -1,42 +1,81 @@
-<div >
-<h2 style = "color: darkblue; font-family:Franklin Gothic Medium;">Event List</h2>
+<div>
+  <h2 style="color: darkblue; font-family: Franklin Gothic Medium">
+    Event List
+  </h2>
 
-<h4>Filter:</h4>
-<input type="text" [(ngModel)]="event_type" placeholder="Enter Event Type:" /> <br>
-<input type="text" [(ngModel)]="event_title" placeholder="Enter Event Name:" /> <br>
-<button (click)="getAll()" >Search By Title</button>
-<br>
-<br>
-<table>
-  <tr >
-    <th style="padding-left:20px; padding-right:10px; text-align:left;font-family:Franklin Gothic Medium;" >Event Type</th>
-    <th style="padding-left:20px; padding-right:10px; text-align:center;font-family:Franklin Gothic Medium;" >Event Name</th>
-    <th>Event Date</th>
-    <th hidden>Event Creator</th>
-    <th></th>
-  </tr>
+  <h4>Filter:</h4>
+  <input type="text" [(ngModel)]="event_type" placeholder="Enter Event Type:" />
+  <br />
+  <input
+    type="text"
+    [(ngModel)]="event_title"
+    placeholder="Enter Event Name:"
+  />
+  <br />
+  <button (click)="getAll()">Search By Title</button>
+  <br />
+  <br />
+  <table>
+    <tr>
+      <th
+        style="
+          padding-left: 20px;
+          padding-right: 10px;
+          text-align: left;
+          font-family: Franklin Gothic Medium;
+        "
+      >
+        Event Type
+      </th>
+      <th
+        style="
+          padding-left: 20px;
+          padding-right: 10px;
+          text-align: center;
+          font-family: Franklin Gothic Medium;
+        "
+      >
+        Event Name
+      </th>
+      <th>Event Date</th>
+      <th>Event Creator</th>
+      <th></th>
+    </tr>
 
-  @for(a of AllEvents; track $index){
-  <tr > 
-    <td style="padding-left:20px; padding-right:10px; text-align:left;" > &#x2022; {{a.type}}</td>
-    <td style="padding-left:20px; padding-right:10px; text-align:center;" ><a routerLink="/{{a.id}}">{{a.eventname }}</a></td>
-    <td>{{a.eventDate}}</td>
-    <td hidden>{{a.username}}</td>
-    
-    <td><button type="button" class="btn" style="color:rgb(54, 135, 102); background-color:aliceblue;" (click)="addNewFavorite(a, user.id)" >Favorite</button></td>
-    <td>
-      @if(deleteUserEvent(a)){
-      <button (click)="DeleteEvent(a)"  type="button" class="btn btn-dark">🗑️ Delete</button>}
-    </td>
-  
-  </tr>
-  }
-</table>
+    @for(a of AllEvents; track $index){
+    <tr>
+      <td style="padding-left: 20px; padding-right: 10px; text-align: left">
+        &#x2022; {{ a.type }}
+      </td>
+      <td style="padding-left: 20px; padding-right: 10px; text-align: center">
+        <a routerLink="/{{ a.id }}">{{ a.eventname }}</a>
+      </td>
+      <td>{{ a.eventDate }}</td>
+      <td>{{ a.username }}</td>
+
+      <td>
+        <button
+          type="button"
+          class="btn"
+          style="color: rgb(54, 135, 102); background-color: aliceblue"
+          (click)="addNewFavorite(a, user.id)"
+        >
+          Favorite
+        </button>
+      </td>
+      <td>
+        @if(deleteUserEvent(a)){
+        <button (click)="DeleteEvent(a)" type="button" class="btn btn-dark">
+          🗑️ Delete</button
+        >}
+      </td>
+    </tr>
+    }
+  </table>
 </div>
-<br>
-
+<br />
 
 <div>
-  <br>
-<app-event-form (Submitted)="addEvent($event)"></app-event-form>
+  <br />
+  <app-event-form (Submitted)="addEvent($event)"></app-event-form>
 </div>

@@ -5,7 +5,7 @@ import { FavoriteComponent } from './components/favorite/favorite.component';
 import { EventDetailsComponent } from './components/event-details/event-details.component';
 
 export const routes: Routes = [
-    {path:"", component:EventsComponent},
-    {path: "favorite", component:FavoriteComponent},
-    {path:":id", component:EventDetailsComponent}
+  { path: '', component: EventsComponent },
+  { path: 'favorite', component: FavoriteComponent },
+  { path: ':id', component: EventDetailsComponent },
 ];
