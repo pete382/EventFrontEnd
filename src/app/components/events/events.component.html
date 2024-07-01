@@ -18,8 +18,11 @@
     <td>{{a.eventDate}}</td>
     <td hidden>{{a.username}}</td>
     
-    <td  ><button type="button" class="btn" style="color:rgb(54, 135, 102); background-color:aliceblue;" (click)="addNewFavorite(a, user.id)" >Favorite</button></td>
-    <td><button (click)="DeleteEvent(a)"  type="button" class="btn btn-dark">🗑️ Delete</button></td>
+    <td><button type="button" class="btn" style="color:rgb(54, 135, 102); background-color:aliceblue;" (click)="addNewFavorite(a, user.id)" >Favorite</button></td>
+    <td>
+      @if(deleteUserEvent(a)){
+      <button (click)="DeleteEvent(a)"  type="button" class="btn btn-dark">🗑️ Delete</button>}
+    </td>
   
   </tr>
   }

@@ -78,4 +78,9 @@ deleteFavorite(f:FavoriteModel, id:string){
   })
 }
 
+deleteUserEvent(e:EventModel):boolean{
+  return e.userid == this.user.id;
+}
+
+
 }
